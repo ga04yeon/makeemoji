@@ -93,12 +93,12 @@
 
   <script>
     function Emoji() {
-      const frame = document.querySelector('#face').value;
+      const face = document.querySelector('#face').value;
       const eye   = document.querySelector('#eye').value;
       const mouth = document.querySelector('#mouth').value;
       
-      if (frame && eye && mouth) {
-        const fin_emoji = frame.charAt(0) + eye + mouth + eye + frame.charAt(1);
+      if (face && eye && mouth) {
+        const fin_emoji = face.charAt(0) + eye + mouth + eye + face.charAt(1);
         result.textContent = fin_emoji;
       } else {
         result.textContent = '';
