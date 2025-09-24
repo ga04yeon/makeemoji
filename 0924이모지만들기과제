@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>이모지 만들기</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css" />
+  <style>
+    body {
+      font-family: 'Galmuri11', sans-serif;
+      text-align: center;
+      padding: 100px;
+      background-image: url('dot.jpg');
+      background-color: #000000;
+      background-repeat: repeat;
+      background-size: auto;
+      color: #FFFFFF;
+    }
+    
+    h1 {
+      color: #FFADE0;
+      font-weight: normal;
+    }
+  
+    p {
+      color: #FFFFFF;
+    }
+
+    .input-container {
+      display: inline-block;
+      margin: 10px;
+    }
+    
+    input {
+      width: 50px;
+      text-align: center;
+      font-size: 24px;
+      padding: 10px;
+      margin-bottom: 5px;
+      border: 2px solid #FFADE0;
+      background-color: #000000;
+      color: #FFFFFF;
+      font-family: 'Galmuri11';
+    }
+    
+    .label {
+      display: block;
+      font-size: 14px;
+      color: #FFFFFF;
+    }
+    
+    .fin_emoji {
+      font-size: 200px;
+      margin-top: 30px;
+      font-family: 'Galmuri14';
+      color: #FFFFFF;
+      background-color: transparent;
+      padding: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+
+
+<body>
+
+  <h1>ϵ( 'Θ' )϶ ♡ 이모지 만들기 ♡ ϵ( 'Θ' )϶</h1>
+  <p>아래 칸에 원하는 기호를 입력해 당신만의 이모지를 만들어 보세요! (*당신의 이모지는 대칭 미인입니다.)</p>
+
+  <div>
+
+    <div class="input-container">
+      <input type="text" id="face" maxlength="2" placeholder="( )" oninput="Emoji()">
+      <span class="label">~ 윤곽 ~</span>
+    </div>
+
+    <div class="input-container">
+      <input type="text" id="eye" maxlength="1" placeholder="^" oninput="Emoji()">
+      <span class="label">~ 눈 ~</span>
+    </div>
+
+    <div class="input-container">
+      <input type="text" id="mouth" maxlength="1" placeholder="~" oninput="Emoji()">
+      <span class="label">~ 입 ~</span>
+    </div>
+
+  </div>
+  <div class="fin_emoji" id="result"></div>
+
+
+
+  <script>
+    function Emoji() {
+      const frame = document.querySelector('#face').value;
+      const eye   = document.querySelector('#eye').value;
+      const mouth = document.querySelector('#mouth').value;
+      
+      if (frame && eye && mouth) {
+        const fin_emoji = frame.charAt(0) + eye + mouth + eye + frame.charAt(1);
+        result.textContent = fin_emoji;
+      } else {
+        result.textContent = '';
+      }
+    }
+  </script>
+
+</body>
+</html>
